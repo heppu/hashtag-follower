@@ -59,7 +59,7 @@ func main() {
 
 	updates, err := bot.GetUpdatesChan(u)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
 	for update := range updates {
@@ -191,7 +191,7 @@ func tagLoop() {
 func updateImage(chatID int64, tag string, info *LastInfo) {
 	res, err := igClient.TagService.Recent(tag)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
 	if len(res.Data.Nodes) == 0 {
