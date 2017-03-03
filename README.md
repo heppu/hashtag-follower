@@ -1,6 +1,6 @@
 # Hashtag Follower
  
-telegram bot which follows instagram hastags
+Telegram bot which follows instagram hastags and post those to user/group
 
 ## Installation
 
