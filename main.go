@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/url"
+	"os"
 	"strings"
 	"sync"
 	"time"
@@ -12,12 +13,6 @@ import (
 	"github.com/heppu/instagram-open-sdk"
 
 	"gopkg.in/telegram-bot-api.v4"
-)
-
-const (
-	botKey     = "" // telgram bot key
-	igUser     = "" // instagram user name
-	igPassword = "" // instgram user password
 )
 
 type LastInfo struct {
@@ -31,6 +26,9 @@ var (
 	tagDb    *db.Client
 	lastTags = make(map[int64]map[string]*LastInfo)
 	tagLock  = &sync.Mutex{}
+	botKey     = os.Getenv("BOTKEY") // telegram bot key
+	igUser     = os.Getenv("IGUSER") // instagram user name
+	igPassword = os.Getenv("IGPASSWORD") // instagram user password
 )
 
 func init() {
